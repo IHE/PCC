@@ -1,0 +1,25 @@
+<!-- this shows an example of an unencoded (aka URL) response to an ITI-34 Retrieve Form Request specifying an encoded response
+	
+	to be used to further discussions about CDS and RAD
+
+-->
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<soap:Header>
+		<wsa:To>http://localhost:4040/axis2/services/someservice</wsa:To>
+		<wsa:MessageID>urn:uuid:76A2C3D9BCD3AECFF31217932910053</wsa:MessageID>
+		<wsa:Action soap:mustUnderstand="1">urn:ihe:iti: 2007:RetrieveFormResponse</wsa:Action>
+	</soap:Header>
+	<soap:Body>
+		<RetrieveFormResponse xmlns="urn:ihe:iti:rfd:2007">
+			<form>
+				<URL>http://somehost/xxx/services/someForm</URL>
+				<!-- FURTHER PROFILED the instanceID may be returned (if one was given), or in some use cases is assigned by Form Processor and returned -->
+				<instanceID>1.2.3.4.5</instanceID>
+			</form>
+			<!-- FURTHER PROFILED the contentType may be defined by Content profiling -->
+			<contentType/>
+			<!-- FURTHER PROFILED the responseCode may be defined by Content profiling -->
+			<responseCode/>
+		</RetrieveFormResponse>
+	</soap:Body>
+</soap:Envelope>

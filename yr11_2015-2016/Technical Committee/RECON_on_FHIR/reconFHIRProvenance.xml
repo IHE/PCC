@@ -1,0 +1,46 @@
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="reconciled-medication-list-details"/>
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+		<!-- expect some text here -->
+    </div>
+  </text>
+  <target>
+	  <reference value="reconciled-med-list"/>
+  </target>
+  <period>
+    <start value="2015-04-28T21:42:00-04:00"/>
+  </period>
+  <recorded value="2015-04-28T21:42:00-04:00"/>
+  <reason>
+    <text value="details of reconciliation"/>
+  </reason>
+  <agent>
+    <role>
+      <system value="http://hl7.org/fhir/provenance-participant-role"/>
+      <code value="performer"/>
+    </role>
+    <type>
+      <system value="http://hl7.org/fhir/provenance-participant-type"/>
+      <code value="practitioner"/>
+    </type>
+    <referenceUri value="Practitioner/f007"/>
+  </agent>
+  <!-- several sources were used for reconciliation -->
+  <entity>
+	  <role value='derivation'/>
+	  <type value='MedicationStatement'/>
+	  <reference value='MedicationStatement/f402'/>
+  </entity>
+  <entity>
+	  <role value='derivation'/>
+	  <type value='Composition'/>
+	  <reference value='Composition/f4323'/>
+  </entity>
+    <entity>
+	  <role value='derivation'/>
+	  <type value='DocumentReference'/>	<!-- this is an example where the source is a document that was not a FHIR resource -->
+	  <reference value='urn:oid:1.2.3.4.5'/>
+  </entity>
+</Provenance>

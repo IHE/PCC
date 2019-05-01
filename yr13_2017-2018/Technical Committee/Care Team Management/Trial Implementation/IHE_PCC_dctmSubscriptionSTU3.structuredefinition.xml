@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-07-19T10:50:29.75-04:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="fhir" />
+  </extension>
+  <url value="StructureDefinition/MySubscription" />
+  <name value="IHE_PCC_dctmSubscriptionSTU3" />
+  <status value="draft" />
+  <date value="2017-07-19T10:39:54.3695816-04:00" />
+  <contact>
+    <name value="IHE PCC Tech" />
+    <telecom>
+      <system value="email" />
+      <value value="pcctech@googlegroups.com" />
+    </telecom>
+  </contact>
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Subscription" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Subscription" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Subscription.channel.type">
+      <path value="Subscription.channel.type" />
+      <short value="rest-hook " />
+      <comment value="This version of the profile constrains the channel type to rest-hook." />
+    </element>
+    <element id="Subscription.channel.endpoint">
+      <path value="Subscription.channel.endpoint" />
+      <requirements value="This version of the profile constrains the channel type to rest-hook, the endpoint must be a valid URL for the Provide Care Team [PCC-49] transaction." />
+    </element>
+    <element id="Subscription.channel.payload">
+      <path value="Subscription.channel.payload" />
+      <short value="Mimetype to send" />
+      <definition value="The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. " />
+      <requirements value="This version of the profile constrains the channel payload to a non-blank value - the CareTeam resource must be the payload." />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

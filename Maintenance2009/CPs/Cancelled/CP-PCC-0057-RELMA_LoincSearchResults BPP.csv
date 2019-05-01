@@ -1,0 +1,7 @@
+"Row","LOINC #","Component","Property","Time Aspect","System","Scale","Method","Ex. Units","Class","Long Common Name","Short Name","Type","Order/Obs","Linguistic Variant","Ext. ©"
+"17","11630-1","Biophysical profile.amniotic fluid volume","Fcn","Pt","^Fetus","Ord","US","","OB.US","","","2","Observation","",""
+"18","11631-9","Biophysical profile.body movement","Fcn","Pt","^Fetus","Ord","US","","OB.US","","","2","Observation","",""
+"19","11632-7","Biophysical profile.breathing movement","Fcn","Pt","^Fetus","Ord","US","","OB.US","","","2","Observation","",""
+"20","11633-5","Biophysical profile.heart rate reactivity","Fcn","Pt","^Fetus","Ord","US","","OB.US","","","2","Observation","",""
+"21","11634-3","Biophysical profile.sum","Fcn","Pt","^Fetus","Ord","Derived","","OB.US","","","2","Observation","",""
+"22","11635-0","Biophysical profile.tone","Fcn","Pt","^Fetus","Ord","US","","OB.US","","","2","Observation","",""

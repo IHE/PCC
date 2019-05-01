@@ -1,0 +1,708 @@
+POST /fhir/CarePlan/_search HTTP/1.1
+Host: spark.furore.com
+Connection: keep-alive
+Content-Length: 10
+Cache-Control: no-cache
+Origin: chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
+Postman-Token: 32f72c38-d43d-cc5d-ba69-c3732e5a8d44
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+
+id=spark42HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: application/xml+fhir; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Mon, 25 Apr 2016 17:12:34 GMT
+Content-Length: 84343
+
+<Bundle xmlns="http://hl7.org/fhir"><id value="urn:uuid:af379fae-92fc-4598-b050-fab596267d72" /><type value="searchset" /><total value="40" /><link><relation value="self" /><url value="http://spark.furore.com/fhir/CarePlan" /></link><link><relation value="first" /><url value="http://spark.furore.com/fhir/_snapshot?id=e56c7875-be02-45de-992e-db2f7b550a8c&amp;start=0" /></link><link><relation value="last" /><url value="http://spark.furore.com/fhir/_snapshot?id=e56c7875-be02-45de-992e-db2f7b550a8c&amp;start=20" /></link><link><relation value="next" /><url value="http://spark.furore.com/fhir/_snapshot?id=e56c7875-be02-45de-992e-db2f7b550a8c&amp;start=20" /></link><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark42/_history/spark107" /><resource><CarePlan><id value="spark42" /><meta><versionId value="spark107" /><lastUpdated value="2016-03-11T21:32:07.15+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark40/_history/spark104" /><resource><CarePlan><id value="spark40" /><meta><versionId value="spark104" /><lastUpdated value="2016-03-11T21:29:44.56+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark38/_history/spark101" /><resource><CarePlan><id value="spark38" /><meta><versionId value="spark101" /><lastUpdated value="2016-03-11T21:23:05.193+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark36/_history/spark98" /><resource><CarePlan><id value="spark36" /><meta><versionId value="spark98" /><lastUpdated value="2016-03-11T21:21:13.443+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark34/_history/spark95" /><resource><CarePlan><id value="spark34" /><meta><versionId value="spark95" /><lastUpdated value="2016-03-11T21:18:16.961+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark32/_history/spark92" /><resource><CarePlan><id value="spark32" /><meta><versionId value="spark92" /><lastUpdated value="2016-03-11T21:17:12.798+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark30/_history/spark89" /><resource><CarePlan><id value="spark30" /><meta><versionId value="spark89" /><lastUpdated value="2016-03-11T21:14:47.003+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark28/_history/spark86" /><resource><CarePlan><id value="spark28" /><meta><versionId value="spark86" /><lastUpdated value="2016-03-11T19:17:12.448+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark26/_history/spark83" /><resource><CarePlan><id value="spark26" /><meta><versionId value="spark83" /><lastUpdated value="2016-03-11T19:08:01.839+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/spark25/_history/spark82" /><resource><CarePlan><id value="spark25" /><meta><versionId value="spark82" /><lastUpdated value="2016-03-11T14:09:36.337+00:00" /></meta><text><status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <div xmlns="">code:includes</div>
+  <div xmlns="">plan:modified:2016-01-15T10:16:06-05:00author:everymanstatus:proposedcategory:Diabetes self management plan (qualifier value)addresses:dateRecorded:2016-01-15code:Depressive disorder (disorder)category:FindingverificationStatus:confirmedseverity:Moderate (severity modifier) onsetDateTime:2016-01-05T00:00:00-05:00addresses:id=&amp;#39;userEntered&amp;#39;&amp;gt;Hypertensioncode:Benign hypertension (disorder)verificationStatus:confirmed</div>
+  <div xmlns="">code:includes</div>
+  <div xmlns="">plan:modified:2016-01-15T10:16:06-05:00author:everymanstatus:proposedcategory:Diabetes self management plan (qualifier value)addresses:dateRecorded:2016-01-15code:Depressive disorder (disorder)category:FindingverificationStatus:confirmedseverity:Moderate (severity modifier) onsetDateTime:2016-01-05T00:00:00-05:00addresses:id=&amp;#39;userEntered&amp;#39;&amp;gt;Hypertensioncode:Benign hypertension (disorder)verificationStatus:confirmedaddresses:id=&amp;#39;userEntered&amp;#39;&amp;gt;Test Condition for Bobidentifier:E11.319dateRecorded:2016-01-15code:Diabetes mellitus without complication (disorder)category:DiagnosisclinicalStatus:activeverificationStatus:confirmedseverity:Moderate (severity modifier) onsetDateTime:2016-01-15T00:00:00-05:00abatementDateTime:2016-01-15T10:13:04-05:00description:This is the patient, my name is Bob Everyman and this Care Plan documents what I care about as the patient</div>
+</div></text><subject><reference value="http://spark.furore.com/fhir/Patient/id1452867835109" /><display value="Bob Everyman" /></subject><relatedPlan><code value="includes" /><plan><reference value="http://spark.furore.com/fhir/CarePlan/id1452871352243" /><display value="CarePlan" /></plan></relatedPlan><relatedPlan><code value="includes" /><plan><reference value="http://spark.furore.com/fhir/CarePlan/id1452871498654" /><display value="CarePlan" /></plan></relatedPlan></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/preg/_history/spark10" /><resource><CarePlan><id value="preg" /><meta><versionId value="spark10" /><lastUpdated value="2016-01-06T12:01:00.309+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>A maternity care plan (for a pregnant woman).</p>
+  <p>LMP is 1st Jan, 2013 (a greaat new years party!) The plan has a scheduled first antenatal,
+            and 'placeholders' for the second antenatal and delivery (there would be lots of others of course)</p>
+  <p>Note that where is a proposed 'status' element against each activity</p>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/1" /><display value="Eve Everywoman" /></patient><code><text value="pregnancy" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Midwife" /><given value="Mavis" /></name><practitionerRole><specialty><text value="Midwife" /></specialty></practitionerRole></Practitioner></contained><contained><Practitioner><id value="pr2" /><name><family value="Obstetrician" /><given value="Oscar" /></name><practitionerRole><specialty><text value="Obstetrician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><subject><reference value="Patient/1" /><display value="Eve Everywoman" /></subject><description value="Maintain patient's health throughout pregnancy and ensure a healthy child" /><status value="in-progress" /></Goal></contained><extension url="http://example.org/DoNotUse/careplan#lmp"><valueDateTime value="2013-01-01" /></extension><subject><reference value="http://spark.furore.com/fhir/Patient/1" /><display value="Eve Everywoman" /></subject><status value="active" /><period><start value="2013-01-01" /><end value="2013-10-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="pregnancy" /></addresses><participant><role><coding><system value="http://example.org/mysys" /><code value="lmc" /></coding><text value="Midwife" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Mavis Midwife" /></member></participant><participant><role><coding><system value="http://example.org/mysys" /><code value="obs" /></coding><text value="Obstretitian" /></role><member><reference value="http://spark.furore.com/fhir/#pr2" /><display value="Oscar Obstetrician" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><extension url="http://example.org/DoNotUse/careplan#andetails"><valueUri value="http://orionhealth.com/fhir/careplan/1andetails" /></extension><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="encounter" /></coding></category><code><coding><system value="http://example.org/mySystem" /><code value="1an" /></coding><text value="First Antenatal encounter" /></code><status value="scheduled" /><prohibited value="false" /><scheduledTiming><repeat><boundsPeriod><start value="2013-02-14" /><end value="2013-02-28" /></boundsPeriod></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Mavis Midwife" /></performer><description value="The first antenatal encounter. This is where a detailed physical examination is performed.             and the pregnanacy discussed with the mother-to-be." /></detail></activity><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="encounter" /></coding></category><code><coding><system value="http://example.org/mySystem" /><code value="an" /></coding><text value="Follow-up Antenatal encounter" /></code><status value="not-started" /><prohibited value="false" /><scheduledTiming><repeat><boundsPeriod><start value="2013-03-01" /><end value="2013-03-14" /></boundsPeriod></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Mavis Midwife" /></performer><description value="The second antenatal encounter. Discuss any issues that arose from the first antenatal encounter" /></detail></activity><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="encounter" /></coding></category><code><coding><system value="http://example.org/mySystem" /><code value="del" /></coding><text value="Delivery" /></code><status value="not-started" /><prohibited value="false" /><scheduledTiming><repeat><boundsPeriod><start value="2013-09-01" /><end value="2013-09-14" /></boundsPeriod></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Mavis Midwife" /></performer><description value="The delivery." /></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/integrate/_history/spark9" /><resource><CarePlan><id value="integrate" /><meta><versionId value="spark9" /><lastUpdated value="2016-01-06T12:01:00.223+00:00" /></meta><text><status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>Patient family is not ready to commit to goal setting at this time.  Goal setting will be addressed in the future</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Start Date</th>
+        <th>Goal</th>
+        <th>Action Steps</th>
+        <th>Status</th>
+        <th>Date Last Updated</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>10 Sep 2012</td>
+        <td>Eve will lose weight and reduce her GERDS symptoms by improving her diet</td>
+        <td>Eve will review photos of high and low density foods and share with her parents</td>
+        <td>New Goal</td>
+        <td>10 Sep 2012</td>
+        <td>9/10/12 Eve eats one meal a day with her parents</td>
+      </tr>
+      <tr>
+        <td>10 Sep 2012</td>
+        <td>Eve will lose weight and reduce her GERDS symptoms by improving her diet</td>
+        <td>Eve will ask her dad to asist her to put the head of her bed on blocks</td>
+        <td>New Goal</td>
+        <td>10 Sep 2012</td>
+        <td>9/10/12 Eve will sleep in her bed more often than the couch</td>
+      </tr>
+      <tr>
+        <td>10 Sep 2012</td>
+        <td>Eve will improve her GERDS symptoms</td>
+        <td>Eve will reduce her intake of coffee and chocolate</td>
+        <td>In Process</td>
+        <td>10 Sep 2012</td>
+        <td />
+      </tr>
+      <tr>
+        <td>27 Aug 2012</td>
+        <td>Eve will increase her energy by being more active</td>
+        <td>Eve will walk her friend's dog up and down a big hill 15-30 minutes 3 days a week</td>
+        <td>In Process</td>
+        <td>10 Sep 2012</td>
+        <td>8/27/12 Eve would like to try for 5 days a week.  9/10/12 Eve is still walking the dogs.</td>
+      </tr>
+      <tr>
+        <td>23 Jul 2012</td>
+        <td>Eve will increase her energy by being more active</td>
+        <td>Eve will walk 3 blocks to her parents house twice a week</td>
+        <td>In Process</td>
+        <td>10 Sep 2012</td>
+        <td>8/13/12 Eve walked 4 times the last week.  9/10/12 Eve did not walk to her parents the last week, but has plans to start again</td>
+      </tr>
+      <tr>
+        <td>23 Jul 2012</td>
+        <td>Eve will set up her medications and take as prescribed</td>
+        <td>Eve will us a calendar to check off after medications are taken</td>
+        <td>In Process</td>
+        <td>13 Aug 2012</td>
+        <td />
+      </tr>
+      <tr>
+        <td>23 Jul 2012</td>
+        <td>Eve will restart her light treatments</td>
+        <td>Eve will use her lights MWF after her shower for 3 minutes</td>
+        <td>In Process</td>
+        <td>27 Aug 2012</td>
+        <td>8/13/12 After restarting the vinegar soaks the psoriasis is improved and Eve plans to treat the remainder with light treatments.  She plans to start this week.  8/27/12 Since her skin is improved Eve has not been using the light treatment as often, maybe once a week.  She would like to increase to 3 times a week again</td>
+      </tr>
+      <tr>
+        <td>10 Jul 2012</td>
+        <td>Eve will set up her medications and take as prescribed</td>
+        <td>Eve will use a calendar of a chart to help her remember when to take her medications</td>
+        <td>In Process</td>
+        <td>10 Sep 2012</td>
+        <td>7/23/12 Eve created a chart as a reminer to take the medications that do not fit in her pill box</td>
+      </tr>
+      <tr>
+        <td>23 Jul 2012</td>
+        <td>Eve will increase her energy by being more active</td>
+        <td>Eve will start using stretch bands and one step 2 days a week Mon/Wed 6-7am and maybe Friday afternoon</td>
+        <td>On-Hold</td>
+        <td>23 Aug 2012</td>
+        <td>7/30/12 will be able to esume exercise.  8/13/12 Eve prefers to focus on walking at this time</td>
+      </tr>
+      <tr>
+        <td>10 Jul 2012</td>
+        <td>Eve will set up her medications and take as prescribed</td>
+        <td>Eve will match a printed medication worksheet with the medication bottles at home</td>
+        <td>Completed</td>
+        <td>23 Jul 2012</td>
+        <td />
+      </tr>
+      <tr>
+        <td>10 Jul 2012</td>
+        <td>Eve will set up her medications and take as prescribed</td>
+        <td>Eve will get a medication box to sort her pills.  She will have one for scheduled medications and one for as needed</td>
+        <td>Completed</td>
+        <td>16 Jul 2012</td>
+        <td>7/16/12 Eve now has some of her medications set up in pill packs by her pharmacist</td>
+      </tr>
+      <tr>
+        <td>23 Jul 2012</td>
+        <td>Eve will increase her energy by being more active</td>
+        <td>Eve will open "The Firm" DVD workout package and listen to it</td>
+        <td>Discontinued</td>
+        <td>13 Aug 2012</td>
+        <td>7/30/12 Eve will be able to resume exercise on 7/30/12.  8/13/12 -hold until "less busy"</td>
+      </tr>
+    </tbody>
+  </table>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/1" /><display value="Eve Everywoman" /></patient><code><text value="GERDS" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Condition><id value="p2" /><patient><reference value="Patient/1" /><display value="Eve Everywoman" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Condition><id value="p3" /><patient><reference value="Patient/1" /><display value="Eve Everywoman" /></patient><code><text value="Psoriasis" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Goal><id value="g1" /><subject><reference value="Patient/1" /><display value="Eve Everywoman" /></subject><description value="Eve will lose weight and reduce her GERDS symptoms by improving her diet" /><status value="in-progress" /></Goal></contained><contained><Goal><id value="g2" /><subject><reference value="Patient/1" /><display value="Eve Everywoman" /></subject><description value="Eve will improve her GERDS symptoms" /><status value="in-progress" /></Goal></contained><contained><Goal><id value="g3" /><subject><reference value="Patient/1" /><display value="Eve Everywoman" /></subject><description value="Eve will increase her energy by being more active" /><status value="in-progress" /></Goal></contained><contained><Goal><id value="g4" /><subject><reference value="Patient/1" /><display value="Eve Everywoman" /></subject><description value="Eve will set up her medications and take as prescribed" /><status value="in-progress" /></Goal></contained><contained><Goal><id value="g5" /><subject><reference value="Patient/1" /><display value="Eve Everywoman" /></subject><description value="Eve will restart her light treatments" /><status value="in-progress" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/1" /><display value="Eve Everywoman" /></subject><status value="active" /><modified value="2012-09-10" /><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="GERDS" /></addresses><addresses><reference value="http://spark.furore.com/fhir/#p2" /><display value="Obesity" /></addresses><addresses><reference value="http://spark.furore.com/fhir/#p3" /><display value="Psoriasis" /></addresses><goal><reference value="http://spark.furore.com/fhir/#g1" /></goal><goal><reference value="http://spark.furore.com/fhir/#g2" /></goal><goal><reference value="http://spark.furore.com/fhir/#g3" /></goal><goal><reference value="http://spark.furore.com/fhir/#g4" /></goal><goal><reference value="http://spark.furore.com/fhir/#g5" /></goal><activity><progress><time value="2012-09-10" /><text value="Eve eats one meal a day with her parents" /></progress><detail><extension url="http://example.org/DoNotUse/StructureDefinition/RevisionDate"><valueDate value="2012-09-10" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g1" /></goal><status value="not-started" /><prohibited value="false" /><scheduledPeriod><start value="2012-09-10" /></scheduledPeriod><description value="Eve will review photos of high and low density foods and share with her parents" /></detail></activity><activity><progress><time value="2012-09-10" /><text value="Eve will sleep in her bed more often than the couch" /></progress><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-09-10" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g1" /></goal><status value="not-started" /><prohibited value="false" /><scheduledPeriod><start value="2012-09-10" /></scheduledPeriod><description value="Eve will ask her dad to asist her to put the head of her bed on blocks" /></detail></activity><activity><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-09-10" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g2" /></goal><status value="in-progress" /><prohibited value="false" /><scheduledPeriod><start value="2012-09-10" /></scheduledPeriod><description value="Eve will reduce her intake of coffee and chocolate" /></detail></activity><activity><progress><time value="2012-08-27" /><text value="Eve would like to try for 5 days a week." /></progress><progress><time value="2012-09-10" /><text value="Eve is still walking the dogs." /></progress><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-09-10" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g3" /></goal><status value="in-progress" /><prohibited value="false" /><scheduledPeriod><start value="2012-08-27" /></scheduledPeriod><description value="Eve will walk her friend's dog up and down a big hill 15-30 minutes 3 days a week" /></detail></activity><activity><progress><time value="2012-08-13" /><text value="Eve walked 4 times the last week." /></progress><progress><time value="2012-09-10" /><text value="Eve did not walk to her parents the last week, but has plans to start again" /></progress><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-09-10" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g3" /></goal><status value="in-progress" /><prohibited value="false" /><scheduledPeriod><start value="2012-07-23" /></scheduledPeriod><description value="Eve will walk 3 blocks to her parents house twice a week" /></detail></activity><activity><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-08-13" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g4" /></goal><status value="in-progress" /><prohibited value="false" /><scheduledPeriod><start value="2012-07-23" /></scheduledPeriod><description value="Eve will us a calendar to check off after medications are taken" /></detail></activity><activity><progress><time value="2012-08-13" /><text value="After restarting the vinegar soaks the psoriasis is improved and Eve plans to treat the remainder with light treatments.  She plans to start this week." /></progress><progress><time value="2012-08-27" /><text value="Since her skin is improved Eve has not been using the light treatment as often, maybe once a week.  She would like to increase to 3 times a week again" /></progress><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-08-27" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g5" /></goal><status value="in-progress" /><prohibited value="false" /><scheduledPeriod><start value="2012-07-23" /></scheduledPeriod><description value="Eve will use her lights MWF after her shower for 3 minutes" /></detail></activity><activity><progress><time value="2012-07-23" /><text value="Eve created a chart as a reminer to take the medications that do not fit in her pill box" /></progress><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-09-10" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g4" /></goal><status value="in-progress" /><prohibited value="false" /><scheduledPeriod><start value="2012-07-10" /></scheduledPeriod><description value="Eve will use a calendar of a chart to help her remember when to take her medications" /></detail></activity><activity><progress><time value="2012-07-30" /><text value="Will be able to esume exercise." /></progress><progress><time value="2012-08-13" /><text value="Eve prefers to focus on walking at this time" /></progress><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-08-23" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g3" /></goal><status value="on-hold" /><prohibited value="false" /><scheduledPeriod><start value="2012-07-23" /></scheduledPeriod><description value="Eve will start using stretch bands and one step 2 days a week Mon/Wed 6-7am and maybe Friday afternoon" /></detail></activity><activity><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-07-23" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g4" /></goal><status value="completed" /><prohibited value="false" /><scheduledPeriod><start value="2012-07-10" /></scheduledPeriod><description value="Eve will match a printed medication worksheet with the medication bottles at home" /></detail></activity><activity><progress><time value="2012-07-16" /><text value="Eve now has some of her medications set up in pill packs by her pharmacist" /></progress><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-07-16" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g4" /></goal><status value="completed" /><prohibited value="false" /><scheduledPeriod><start value="2012-07-10" /></scheduledPeriod><description value="Eve will get a medication box to sort her pills.  She will have one for scheduled medications and one for as needed" /></detail></activity><activity><progress><time value="2012-07-12" /><text value="Eve will be able to resume exercise on 7/30/12" /></progress><progress><time value="2012-08-13" /><text value="hold until &quot;less busy&quot;" /></progress><detail><extension url="http://example.org/DoNotUse/General/RevisionDate"><valueDate value="2012-08-13" /></extension><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="other" /></coding></category><goal><reference value="http://spark.furore.com/fhir/#g3" /></goal><status value="on-hold" /><prohibited value="false" /><scheduledPeriod><start value="2012-07-23" /></scheduledPeriod><description value="Eve will open &quot;The Firm&quot; DVD workout package and listen to it" /></detail></activity><note><text value="Patient family is not ready to commit to goal setting at this time.  Goal setting will be addressed in the future" /></note></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/gpvisit/_history/spark8" /><resource><CarePlan><id value="gpvisit" /><meta><versionId value="spark8" /><lastUpdated value="2016-01-06T12:01:00.19+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>  Represents the flow of a patient within a practice. The plan is created when
+        they arrive and represents the 'care' of the patient over the course of that encounter.
+        They first see the nurse for basic observations (BP, pulse, temp) then the doctor for
+        the consultation and finally the nurse again for a tetanus immunization. As the plan is
+        updated (e.g. a new activity added), different versions of the plan exist, and workflow timings
+        for reporting can be gained by examining the plan history. This example is the version after
+        seeing the doctor, and waiting for the nurse.The plan can either be created 'ad hoc' and modified as
+        the parient progresses, or start with a standard template (which can, of course, be altered to suit the patient.</p>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/100" /><display value="Peter James Chalmers" /></patient><code><text value="Overseas encounter" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Goal><id value="goal" /><subject><reference value="Patient/100" /><display value="Peter James Chalmers" /></subject><description value="Complete consultation" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/100" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><start value="2013-01-01T10:30:00+00:00" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant id="part1"><role><coding><system value="http://example.org/local" /><code value="nur" /></coding><text value="nurse" /></role><member><reference value="http://spark.furore.com/fhir/Practitioner/13" /><display value="Nurse Nancy" /></member></participant><participant id="part2"><role><coding><system value="http://example.org/local" /><code value="doc" /></coding><text value="doctor" /></role><member><reference value="http://spark.furore.com/fhir/Practitioner/14" /><display value="Doctor Dave" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><actionResulting><reference value="http://spark.furore.com/fhir/Encounter/example" /></actionResulting><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="encounter" /></coding></category><code><coding><system value="http://example.org/local" /><code value="nursecon" /></coding><text value="Nurse Consultation" /></code><status value="completed" /><prohibited value="false" /><scheduledPeriod><start value="2013-01-01T10:38:00+00:00" /><end value="2013-01-01T10:50:00+00:00" /></scheduledPeriod><performer><reference value="http://spark.furore.com/fhir/Practitioner/13" /><display value="Nurse Nancy" /></performer></detail></activity><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="encounter" /></coding></category><code><coding><system value="http://example.org/local" /><code value="doccon" /></coding><text value="Doctor Consultation" /></code><status value="scheduled" /><prohibited value="false" /><performer><reference value="http://spark.furore.com/fhir/Practitioner/14" /><display value="Doctor Dave" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/f203/_history/spark7" /><resource><CarePlan><id value="f203" /><meta><versionId value="spark7" /><lastUpdated value="2016-01-06T12:01:00.174+00:00" /></meta><text><status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>
+    <b>Generated Narrative with Details</b>
+  </p>
+  <p>
+    <b>id</b>: f203</p>
+  <p>
+    <b>contained</b>: </p>
+  <p>
+    <b>subject</b>: <a>Roel</a></p>
+  <p>
+    <b>status</b>: completed</p>
+  <p>
+    <b>period</b>: 14/04/2013 --&gt; 21/04/2013</p>
+  <p>
+    <b>modified</b>: 11/03/2013</p>
+  <p>
+    <b>addresses</b>: <a>Roel's sepsis</a></p>
+  <blockquote>
+    <p>
+      <b>participant</b>
+    </p>
+    <p>
+      <b>role</b>: Review of care plan <span>(Details : {SNOMED CT code '425268008' = '425268008', given as 'Review of care plan'})</span></p>
+    <p>
+      <b>member</b>: <a>Dokter Bronsig</a></p>
+  </blockquote>
+  <blockquote>
+    <p>
+      <b>participant</b>
+    </p>
+    <p>
+      <b>role</b>: Radiographic imaging <span>(Details : {SNOMED CT code '278110001' = '278110001', given as 'Radiographic imaging'})</span></p>
+    <p>
+      <b>member</b>: <a>Luigi Maas</a></p>
+  </blockquote>
+  <p>
+    <b>goal</b>: id: goal; Roel; description: Check whether further treatment of sepsis/pulmonary abcess is required; status: cancelled</p>
+  <blockquote>
+    <p>
+      <b>activity</b>
+    </p>
+    <h3>Details</h3>
+    <table>
+      <tr>
+        <td>-</td>
+        <td>
+          <b>Category</b>
+        </td>
+        <td>
+          <b>Code</b>
+        </td>
+        <td>
+          <b>Status</b>
+        </td>
+        <td>
+          <b>Prohibited</b>
+        </td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Observation <span>(Details : {http://hl7.org/fhir/care-plan-activity-category code 'observation' = 'Observation)</span></td>
+        <td>High resolution computed tomography of lungs <span>(Details : {SNOMED CT code '241541005' = '241541005', given as 'High resolution computed tomography of lungs'})</span></td>
+        <td>not-started</td>
+        <td>false</td>
+      </tr>
+    </table>
+  </blockquote>
+</div></text><contained><Goal><id value="goal" /><subject><reference value="Patient/f201" /><display value="Roel" /></subject><description value="Check whether further treatment of sepsis/pulmonary abcess is required" /><status value="cancelled" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/f201" /><display value="Roel" /></subject><status value="completed" /><period><start value="2013-04-14" /><end value="2013-04-21" /></period><modified value="2013-03-11" /><addresses><reference value="http://spark.furore.com/fhir/Condition/f203" /><display value="Roel's sepsis" /></addresses><participant><role><coding><system value="http://snomed.info/sct" /><code value="425268008" /><display value="Review of care plan" /></coding></role><member><reference value="http://spark.furore.com/fhir/Practitioner/f201" /><display value="Dokter Bronsig" /></member></participant><participant><role><coding><system value="http://snomed.info/sct" /><code value="278110001" /><display value="Radiographic imaging" /></coding></role><member><reference value="http://spark.furore.com/fhir/Practitioner/f202" /><display value="Luigi Maas" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><coding><system value="http://snomed.info/sct" /><code value="241541005" /><display value="High resolution computed tomography of lungs" /></coding></code><status value="not-started" /><prohibited value="false" /></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/f202/_history/spark6" /><resource><CarePlan><id value="f202" /><meta><versionId value="spark6" /><lastUpdated value="2016-01-06T12:01:00.14+00:00" /></meta><text><status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>
+    <b>Generated Narrative with Details</b>
+  </p>
+  <p>
+    <b>id</b>: f202</p>
+  <p>
+    <b>contained</b>: , , , , </p>
+  <p>
+    <b>subject</b>: <a>Roel</a></p>
+  <p>
+    <b>status</b>: active</p>
+  <p>
+    <b>addresses</b>: <a>Roel's head-neck tumor</a></p>
+  <h3>Participants</h3>
+  <table>
+    <tr>
+      <td>-</td>
+      <td>
+        <b>Role</b>
+      </td>
+      <td>
+        <b>Member</b>
+      </td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>Treated with <span>(Details : {SNOMED CT code '28995006' = '28995006', given as 'Treated with'})</span></td>
+      <td>
+        <a>Dokter Bronsig</a>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <b>goal</b>: id: goal; Roel; description: Elimination of the spenoid bone tumor; status: in-progress</p>
+  <blockquote>
+    <p>
+      <b>activity</b>
+    </p>
+    <p>
+      <b>actionResulting</b>: <a>Roel's Chemotherapy</a></p>
+    <h3>Details</h3>
+    <table>
+      <tr>
+        <td>-</td>
+        <td>
+          <b>Category</b>
+        </td>
+        <td>
+          <b>Code</b>
+        </td>
+        <td>
+          <b>Status</b>
+        </td>
+        <td>
+          <b>Prohibited</b>
+        </td>
+        <td>
+          <b>Product[x]</b>
+        </td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Procedure <span>(Details : {http://hl7.org/fhir/care-plan-activity-category code 'procedure' = 'Procedure)</span></td>
+        <td>Chemotherapy <span>(Details : {SNOMED CT code '367336001' = '367336001', given as 'Chemotherapy'})</span></td>
+        <td>in-progress</td>
+        <td>false</td>
+        <td>id: tpf; TPF <span>(Details )</span></td>
+      </tr>
+    </table>
+  </blockquote>
+</div></text><contained><Medication><id value="doce" /><code><coding><system value="http://snomed.info/sct" /><code value="108806006" /><display value="Docetaxel" /></coding></code></Medication></contained><contained><Medication><id value="cisp" /><code><coding><system value="http://snomed.info/sct" /><code value="57066004" /><display value="Cisplatin" /></coding></code></Medication></contained><contained><Medication><id value="fluo" /><code><coding><system value="http://snomed.info/sct" /><code value="3127006" /><display value="Fluorouracil" /></coding></code></Medication></contained><contained><Medication><id value="tpf" /><code><text value="TPF" /></code><product><ingredient><item><reference value="#doce" /></item></ingredient><ingredient><item><reference value="#cisp" /></item></ingredient><ingredient><item><reference value="#fluo" /></item></ingredient></product></Medication></contained><contained><Goal><id value="goal" /><subject><reference value="Patient/f201" /><display value="Roel" /></subject><description value="Elimination of the spenoid bone tumor" /><status value="in-progress" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/f201" /><display value="Roel" /></subject><status value="active" /><addresses><reference value="http://spark.furore.com/fhir/Condition/f202" /><display value="Roel's head-neck tumor" /></addresses><participant><role><coding><system value="http://snomed.info/sct" /><code value="28995006" /><display value="Treated with" /></coding></role><member><reference value="http://spark.furore.com/fhir/Practitioner/f201" /><display value="Dokter Bronsig" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><actionResulting><reference value="http://spark.furore.com/fhir/Procedure/f201" /><display value="Roel's Chemotherapy" /></actionResulting><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="procedure" /></coding></category><code><coding><system value="http://snomed.info/sct" /><code value="367336001" /><display value="Chemotherapy" /></coding></code><status value="in-progress" /><prohibited value="false" /><productReference><reference value="http://spark.furore.com/fhir/#tpf" /></productReference></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/f201/_history/spark5" /><resource><CarePlan><id value="f201" /><meta><versionId value="spark5" /><lastUpdated value="2016-01-06T12:01:00.115+00:00" /></meta><text><status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>
+    <b>Generated Narrative with Details</b>
+  </p>
+  <p>
+    <b>id</b>: f201</p>
+  <p>
+    <b>contained</b>: </p>
+  <p>
+    <b>subject</b>: <a>Roel</a></p>
+  <p>
+    <b>status</b>: draft</p>
+  <p>
+    <b>period</b>: 11/03/2013 --&gt; 13/03/2013</p>
+  <p>
+    <b>modified</b>: 11/03/2013</p>
+  <p>
+    <b>addresses</b>: <a>Roel's renal insufficiency</a></p>
+  <blockquote>
+    <p>
+      <b>participant</b>
+    </p>
+    <p>
+      <b>role</b>: Review of care plan <span>(Details : {SNOMED CT code '425268008' = '425268008', given as 'Review of care plan'})</span></p>
+    <p>
+      <b>member</b>: <a>Dokter Bronsig</a></p>
+  </blockquote>
+  <blockquote>
+    <p>
+      <b>participant</b>
+    </p>
+    <p>
+      <b>role</b>: Carer <span>(Details : {SNOMED CT code '229774002' = '229774002', given as 'Carer'})</span></p>
+    <p>
+      <b>member</b>: <a>Nurse Carla Espinosa</a></p>
+  </blockquote>
+  <p>
+    <b>goal</b>: id: goal; Roel; description: Re-established renal function with at least healthy nutrients.; status: achieved</p>
+  <blockquote>
+    <p>
+      <b>activity</b>
+    </p>
+    <h3>Details</h3>
+    <table>
+      <tr>
+        <td>-</td>
+        <td>
+          <b>Category</b>
+        </td>
+        <td>
+          <b>Code</b>
+        </td>
+        <td>
+          <b>Status</b>
+        </td>
+        <td>
+          <b>Prohibited</b>
+        </td>
+        <td>
+          <b>Scheduled[x]</b>
+        </td>
+        <td>
+          <b>Product[x]</b>
+        </td>
+        <td>
+          <b>DailyAmount</b>
+        </td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Diet <span>(Details : {http://hl7.org/fhir/care-plan-activity-category code 'diet' = 'Diet)</span></td>
+        <td>Potassium supplementation <span>(Details : {SNOMED CT code '284093001' = '284093001', given as 'Potassium supplementation'})</span></td>
+        <td>completed</td>
+        <td>false</td>
+        <td>daily</td>
+        <td>
+          <a>Potassium</a>
+        </td>
+        <td>80 mmol<span> (Details: SNOMED CT code 258718000 = '258718000')</span></td>
+      </tr>
+    </table>
+  </blockquote>
+  <blockquote>
+    <p>
+      <b>activity</b>
+    </p>
+    <h3>Details</h3>
+    <table>
+      <tr>
+        <td>-</td>
+        <td>
+          <b>Category</b>
+        </td>
+        <td>
+          <b>Code</b>
+        </td>
+        <td>
+          <b>Status</b>
+        </td>
+        <td>
+          <b>Prohibited</b>
+        </td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Observation <span>(Details : {http://hl7.org/fhir/care-plan-activity-category code 'observation' = 'Observation)</span></td>
+        <td>Echography of kidney <span>(Details : {SNOMED CT code '306005' = '306005', given as 'Echography of kidney'})</span></td>
+        <td>completed</td>
+        <td>false</td>
+      </tr>
+    </table>
+  </blockquote>
+</div></text><contained><Goal><id value="goal" /><subject><reference value="Patient/f201" /><display value="Roel" /></subject><description value="Re-established renal function with at least healthy nutrients." /><status value="achieved" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/f201" /><display value="Roel" /></subject><status value="draft" /><period><start value="2013-03-11" /><end value="2013-03-13" /></period><modified value="2013-03-11" /><addresses><reference value="http://spark.furore.com/fhir/Condition/f204" /><display value="Roel's renal insufficiency" /></addresses><participant><role><coding><system value="http://snomed.info/sct" /><code value="425268008" /><display value="Review of care plan" /></coding></role><member><reference value="http://spark.furore.com/fhir/Practitioner/f201" /><display value="Dokter Bronsig" /></member></participant><participant><role><coding><system value="http://snomed.info/sct" /><code value="229774002" /><display value="Carer" /></coding></role><member><reference value="http://spark.furore.com/fhir/Practitioner/f204" /><display value="Nurse Carla Espinosa" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="diet" /></coding></category><code><coding><system value="http://snomed.info/sct" /><code value="284093001" /><display value="Potassium supplementation" /></coding></code><status value="completed" /><prohibited value="false" /><scheduledString value="daily" /><productReference><reference value="http://spark.furore.com/fhir/Substance/f203" /><display value="Potassium" /></productReference><dailyAmount><value value="80.0" /><unit value="mmol" /><system value="http://snomed.info/sct" /><code value="258718000" /></dailyAmount></detail></activity><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><coding><system value="http://snomed.info/sct" /><code value="306005" /><display value="Echography of kidney" /></coding></code><status value="completed" /><prohibited value="false" /></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/f003/_history/spark4" /><resource><CarePlan><id value="f003" /><meta><versionId value="spark4" /><lastUpdated value="2016-01-06T12:01:00.087+00:00" /></meta><text><status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>
+    <b>Generated Narrative with Details</b>
+  </p>
+  <p>
+    <b>id</b>: f003</p>
+  <p>
+    <b>contained</b>: </p>
+  <p>
+    <b>identifier</b>: CP3953 (OFFICIAL)</p>
+  <p>
+    <b>subject</b>: <a>P. van de Heuvel</a></p>
+  <p>
+    <b>status</b>: completed</p>
+  <p>
+    <b>period</b>: 08/03/2013 9:00:10 AM --&gt; 08/03/2013 9:30:10 AM</p>
+  <p>
+    <b>modified</b>: 27/06/2013 9:30:10 AM</p>
+  <p>
+    <b>addresses</b>: <a>?????</a></p>
+  <h3>Participants</h3>
+  <table>
+    <tr>
+      <td>-</td>
+      <td>
+        <b>Member</b>
+      </td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>
+        <a>E.M. van den broek</a>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <b>goal</b>: id: goal; P. van de Heuvel; description: Retropharyngeal abscess removal; status: achieved; Annotation: goal accomplished without complications</p>
+  <blockquote>
+    <p>
+      <b>activity</b>
+    </p>
+    <h3>Details</h3>
+    <table>
+      <tr>
+        <td>-</td>
+        <td>
+          <b>Category</b>
+        </td>
+        <td>
+          <b>Code</b>
+        </td>
+        <td>
+          <b>Status</b>
+        </td>
+        <td>
+          <b>Prohibited</b>
+        </td>
+        <td>
+          <b>Scheduled[x]</b>
+        </td>
+        <td>
+          <b>Performer</b>
+        </td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Procedure <span>(Details : {http://hl7.org/fhir/care-plan-activity-category code 'procedure' = 'Procedure)</span></td>
+        <td>Incision of retropharyngeal abscess <span>(Details : {SNOMED CT code '172960003' = '172960003', given as 'Incision of retropharyngeal abscess'})</span></td>
+        <td>completed</td>
+        <td>true</td>
+        <td>2011-06-27T09:30:10+01:00</td>
+        <td>
+          <a>E.M. van den broek</a>
+        </td>
+      </tr>
+    </table>
+  </blockquote>
+</div></text><contained><Goal><id value="goal" /><subject><reference value="Patient/f001" /><display value="P. van de Heuvel" /></subject><description value="Retropharyngeal abscess removal" /><status value="achieved" /><note><text value="goal accomplished without complications" /></note></Goal></contained><identifier><use value="official" /><system value="http://www.bmc.nl/zorgportal/identifiers/careplans" /><value value="CP3953" /></identifier><subject><reference value="http://spark.furore.com/fhir/Patient/f001" /><display value="P. van de Heuvel" /></subject><status value="completed" /><period><start value="2013-03-08T09:00:10+01:00" /><end value="2013-03-08T09:30:10+01:00" /></period><modified value="2013-06-27T09:30:10+01:00" /><addresses><reference value="http://spark.furore.com/fhir/Condition/f201" /><display value="?????" /></addresses><participant><member><reference value="http://spark.furore.com/fhir/Practitioner/f001" /><display value="E.M. van den broek" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="procedure" /></coding></category><code><coding><system value="http://snomed.info/sct" /><code value="172960003" /><display value="Incision of retropharyngeal abscess" /></coding></code><status value="completed" /><prohibited value="true" /><scheduledString value="2011-06-27T09:30:10+01:00" /><performer><reference value="http://spark.furore.com/fhir/Practitioner/f001" /><display value="E.M. van den broek" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/f002/_history/spark3" /><resource><CarePlan><id value="f002" /><meta><versionId value="spark3" /><lastUpdated value="2016-01-06T12:01:00.069+00:00" /></meta><text><status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>
+    <b>Generated Narrative with Details</b>
+  </p>
+  <p>
+    <b>id</b>: f002</p>
+  <p>
+    <b>contained</b>: </p>
+  <p>
+    <b>identifier</b>: CP2934 (OFFICIAL)</p>
+  <p>
+    <b>subject</b>: <a>P. van de Heuvel</a></p>
+  <p>
+    <b>status</b>: completed</p>
+  <p>
+    <b>period</b>: 06/07/2011 --&gt; 07/07/2013</p>
+  <p>
+    <b>modified</b>: 07/07/2011 9:30:10 AM</p>
+  <p>
+    <b>addresses</b>: <a>?????</a></p>
+  <h3>Participants</h3>
+  <table>
+    <tr>
+      <td>-</td>
+      <td>
+        <b>Member</b>
+      </td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>
+        <a>M.I.M. Versteegh</a>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <b>goal</b>: id: goal; P. van de Heuvel; description: succesful surgery on lung of patient; status: achieved; Annotation: goal accomplished with minor complications</p>
+  <blockquote>
+    <p>
+      <b>activity</b>
+    </p>
+    <h3>Details</h3>
+    <table>
+      <tr>
+        <td>-</td>
+        <td>
+          <b>Category</b>
+        </td>
+        <td>
+          <b>Code</b>
+        </td>
+        <td>
+          <b>Status</b>
+        </td>
+        <td>
+          <b>Prohibited</b>
+        </td>
+        <td>
+          <b>Scheduled[x]</b>
+        </td>
+        <td>
+          <b>Performer</b>
+        </td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Procedure <span>(Details : {http://hl7.org/fhir/care-plan-activity-category code 'procedure' = 'Procedure)</span></td>
+        <td>Partial lobectomy of lung <span>(Details : {SNOMED CT code '359615001' = '359615001', given as 'Partial lobectomy of lung'})</span></td>
+        <td>completed</td>
+        <td>true</td>
+        <td>2011-07-07T09:30:10+01:00</td>
+        <td>
+          <a>M.I.M. Versteegh</a>
+        </td>
+      </tr>
+    </table>
+  </blockquote>
+</div></text><contained><Goal><id value="goal" /><subject><reference value="Patient/f001" /><display value="P. van de Heuvel" /></subject><description value="succesful surgery on lung of patient" /><status value="achieved" /><note><text value="goal accomplished with minor complications" /></note></Goal></contained><identifier><use value="official" /><system value="http://www.bmc.nl/zorgportal/identifiers/careplans" /><value value="CP2934" /></identifier><subject><reference value="http://spark.furore.com/fhir/Patient/f001" /><display value="P. van de Heuvel" /></subject><status value="completed" /><period><start value="2011-07-06" /><end value="2013-07-07" /></period><modified value="2011-07-07T09:30:10+01:00" /><addresses><reference value="http://spark.furore.com/fhir/Condition/f201" /><display value="?????" /></addresses><participant><member><reference value="http://spark.furore.com/fhir/Practitioner/f003" /><display value="M.I.M. Versteegh" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="procedure" /></coding></category><code><coding><system value="http://snomed.info/sct" /><code value="359615001" /><display value="Partial lobectomy of lung" /></coding></code><status value="completed" /><prohibited value="true" /><scheduledString value="2011-07-07T09:30:10+01:00" /><performer><reference value="http://spark.furore.com/fhir/Practitioner/f003" /><display value="M.I.M. Versteegh" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/f001/_history/spark2" /><resource><CarePlan><id value="f001" /><meta><versionId value="spark2" /><lastUpdated value="2016-01-06T12:01:00.046+00:00" /></meta><text><status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p>
+    <b>Generated Narrative with Details</b>
+  </p>
+  <p>
+    <b>id</b>: f001</p>
+  <p>
+    <b>contained</b>: </p>
+  <p>
+    <b>identifier</b>: CP2903 (OFFICIAL)</p>
+  <p>
+    <b>subject</b>: <a>P. van de Heuvel</a></p>
+  <p>
+    <b>status</b>: completed</p>
+  <p>
+    <b>period</b>: 26/06/2011 --&gt; 27/06/2011</p>
+  <p>
+    <b>modified</b>: 27/06/2011 9:30:10 AM</p>
+  <p>
+    <b>addresses</b>: <a>?????</a></p>
+  <h3>Participants</h3>
+  <table>
+    <tr>
+      <td>-</td>
+      <td>
+        <b>Member</b>
+      </td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>
+        <a>P. Voigt</a>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <b>goal</b>: id: goal; P. van de Heuvel; description: recovery surgery on heart of patient; status: achieved; Annotation: goal accomplished without complications</p>
+  <blockquote>
+    <p>
+      <b>activity</b>
+    </p>
+    <h3>Details</h3>
+    <table>
+      <tr>
+        <td>-</td>
+        <td>
+          <b>Category</b>
+        </td>
+        <td>
+          <b>Code</b>
+        </td>
+        <td>
+          <b>Status</b>
+        </td>
+        <td>
+          <b>Prohibited</b>
+        </td>
+        <td>
+          <b>Scheduled[x]</b>
+        </td>
+        <td>
+          <b>Performer</b>
+        </td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Procedure <span>(Details : {http://hl7.org/fhir/care-plan-activity-category code 'procedure' = 'Procedure)</span></td>
+        <td>Operation on heart <span>(Details : {SNOMED CT code '64915003' = '64915003', given as 'Operation on heart'})</span></td>
+        <td>completed</td>
+        <td>true</td>
+        <td>2011-06-27T09:30:10+01:00</td>
+        <td>
+          <a>P. Voigt</a>
+        </td>
+      </tr>
+    </table>
+  </blockquote>
+</div></text><contained><Goal><id value="goal" /><subject><reference value="Patient/f001" /><display value="P. van de Heuvel" /></subject><description value="recovery surgery on heart of patient" /><status value="achieved" /><note><text value="goal accomplished without complications" /></note></Goal></contained><identifier><use value="official" /><system value="http://www.bmc.nl/zorgportal/identifiers/careplans" /><value value="CP2903" /></identifier><subject><reference value="http://spark.furore.com/fhir/Patient/f001" /><display value="P. van de Heuvel" /></subject><status value="completed" /><period><start value="2011-06-26" /><end value="2011-06-27" /></period><modified value="2011-06-27T09:30:10+01:00" /><addresses><reference value="http://spark.furore.com/fhir/Condition/f201" /><display value="?????" /></addresses><participant><member><reference value="http://spark.furore.com/fhir/Practitioner/f002" /><display value="P. Voigt" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="procedure" /></coding></category><code><coding><system value="http://snomed.info/sct" /><code value="64915003" /><display value="Operation on heart" /></coding></code><status value="completed" /><prohibited value="true" /><scheduledString value="2011-06-27T09:30:10+01:00" /><performer><reference value="http://spark.furore.com/fhir/Practitioner/f002" /><display value="P. Voigt" /></performer></detail></activity></CarePlan></resource></entry><entry><fullUrl value="http://spark.furore.com/fhir/CarePlan/example/_history/spark1" /><resource><CarePlan><id value="example" /><meta><versionId value="spark1" /><lastUpdated value="2016-01-06T12:01:00.02+00:00" /></meta><text><status value="additional" /><div xmlns="http://www.w3.org/1999/xhtml">
+  <p> A simple care plan to indicate a patient taking their weight once a day because of obesity.
+            Some Notes: </p>
+  <ul>
+    <li>It would be good to have some way of specifying/coding a goal; e.g. what the target weight is</li>
+    <li>In the codeable concepts I've been lazy and just put the text. There should, of course, be a code behind these</li>
+  </ul>
+</div></text><contained><Condition><id value="p1" /><patient><reference value="Patient/example" /><display value="Peter James Chalmers" /></patient><code><text value="Obesity" /></code><verificationStatus value="confirmed" /></Condition></contained><contained><Practitioner><id value="pr1" /><name><family value="Dietician" /><given value="Dorothy" /></name><practitionerRole><specialty><text value="Dietician" /></specialty></practitionerRole></Practitioner></contained><contained><Goal><id value="goal" /><extension url="http://hl7.org/fhir/StructureDefinition/goal-target"><extension url="goal-target.measure"><valueCodeableConcept><coding><system value="http://loinc.org" /><code value="29463-7" /><display value="Body weight" /></coding></valueCodeableConcept></extension><extension url="goal-target.detail"><valueQuantity><value value="80.0" /><system value="http://units-of-measure.org" /><code value="kg" /></valueQuantity></extension></extension><subject><reference value="Patient/example" /><display value="Peter James Chalmers" /></subject><description value="Target weight is 80 kg" /><status value="planned" /></Goal></contained><subject><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></subject><status value="active" /><period><end value="2013-01-01" /></period><addresses><reference value="http://spark.furore.com/fhir/#p1" /><display value="obesity" /></addresses><participant><role><text value="responsiblePerson" /></role><member><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></member></participant><participant><role><text value="adviser" /></role><member><reference value="http://spark.furore.com/fhir/#pr1" /><display value="Dorothy Dietition" /></member></participant><goal><reference value="http://spark.furore.com/fhir/#goal" /></goal><activity><detail><category><coding><system value="http://hl7.org/fhir/care-plan-activity-category" /><code value="observation" /></coding></category><code><text value="a code for weight measurement" /></code><prohibited value="false" /><scheduledTiming><repeat><frequency value="1" /><period value="1.0" /><periodUnits value="d" /></repeat></scheduledTiming><performer><reference value="http://spark.furore.com/fhir/Patient/example" /><display value="Peter James Chalmers" /></performer></detail></activity></CarePlan></resource></entry></Bundle>

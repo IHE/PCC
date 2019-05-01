@@ -1,0 +1,24 @@
+Submitter:Renee Vitullo
+Profile: Perinatal Workflow	
+Volume: 1	
+Section: x.5.2	
+Line: 740	
+Issue: Misspelling	
+Priority: l	740 Malicious attackers or users may attempt to gain patient identity information to perpetrate fraud. 
+Proposal: Change perpetrate to perpetuate
+
+small
+
+
+
+Submitter: Renee Vitullo	
+Profile: Perinatal Workflow	
+Volume: 1	
+Section: x.7.1	
+Line:814	
+Issue: Link not working - http://www.acog.org/acb-custom/aa128.pdf.	
+Priority: l	
+Proposal: Fix link so that correct window opens when link is clicked or pasted into web browser
+
+
+small - addressed in IHC comments

@@ -1,0 +1,1 @@
+Do not use these templates. The correct profile supplement templates should be located at ftp://ftp.ihe.net/Document_templates/
