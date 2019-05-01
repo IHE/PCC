@@ -1,0 +1,153 @@
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/> (Problem Concern entry templateID)
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem List"/>
+					<title>Problems</title>
+					<text>
+						<Text about the problem>
+						<Text about the reconciliation> (e.g Information in this section reconciled by Doctor Smith on September 15, 1965)
+					</text>
+					<entry>
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/> (Generic Concern entry templateID)
+							<code nullflavor="NA"/>
+							<statusCode code="completed"/>
+							<effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN" negationInd="true">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/> (Generic Observation templateID)
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" code="64572001" displayName="Condition"/>
+									<text>
+										<reference value=""/>
+									</text>
+									<statusCode code="completed"/>
+									<effectiveTime>
+									<value xsi:type="CD" code="" codeSystem="" codeSystemName="" displayName="">
+										<originalText>
+											<reference value=""/>
+										</originalText>
+									</value>
+							******Performer of the problem ACT******************************* (person who determined that the patient has this problem)
+									<performer typeCode="PRF">
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.5"/> (Performer of the ACT templateID)
+										[<templateId root="put reconciliation of care provider templateID here?"/> (one option -(George suggestion last week for provider in the header)]
+										<assignedEntity classCode="ASSIGNED">
+											<id root="" extension=""/>
+											<addr></addr>
+											<telecom></telecom>
+											<assignedPerson>
+												<name></name>
+											</assignedPerson>
+											<representedOrganization>
+												<name></name>
+												<addr></addr>
+												<telecom></telecom>
+											</representedOrganization>
+										</assignedEntity>
+									</performer>				
+							*****************************************************************
+								</observation>
+							</entryRelationship>
+					***********Diagnosis Reconciliation Act***************************************************************************************************
+							<act classCode="ACT" moodCode="EVN">
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.1"/> (Reconciliation act templateID)
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.2"/> (Diagnosis Reconciliation act templateID)
+								<id root="" extension=""/>
+								<code code="DIAGREC" displayName="Diagnoses Reconciliation" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+								<statusCode code="completed"/>
+								<text>
+									<reference value='Reference to the Text about the reconciliation'/>
+								</text>
+								<effectiveTime value=""/>
+								********reconciliation Performer******************************* (person who did the diagnosis reconciliation)
+								<performer typeCode="PRF">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.5"/> (performer templateID)
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.5.1"/> (reconciliation performer templateID)
+									<assignedEntity classCode="ASSIGNED">
+										<id root="" extension=""/>
+										<addr></addr>
+										<telecom></telecom>
+										<assignedPerson>
+											<name></name>
+										</assignedPerson>
+										<representedOrganization>
+											<name></name>
+											<addr></addr>
+											<telecom></telecom>
+										</representedOrganization>
+									</assignedEntity>
+								</performer>
+								**********************************************************************
+							</act>	
+					*************************************************************************************************************************************************	
+					*************Care Provider Reconciliation Act ***************************************************************************************************
+							<act classCode="ACT" moodCode="EVN">
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.1"/> (Reconciliation act templateID)
+								<templateId root="Need to request from LauraB"/> (Care Provider Reconciliation act templateID)
+								<id root="" extension=""/>
+								<code code="PROVREC" displayName="Care Providers Reconciliation" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode"/>
+								<statusCode code="completed"/>
+								<effectiveTime value=""/>
+								<entryRelationship typeCode="SUBJ" inversionInd="true"> (is the inversion indicator needed to stipulate that this performer is the subject of the act?)
+									<act classCode="ACT" moodCode="EVN">
+									******Reconciled performer******************************* (performer that is reconciled)
+									<performer typeCode="PRF">
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.5"/> (Performer of the ACT templateID)
+										<templateId root="put reconciliation of care provider templateID here?"/> (George suggestion last week)
+										<assignedEntity classCode="ASSIGNED">
+											<id root="" extension=""/>
+											<addr></addr>
+											<telecom></telecom>
+											<assignedPerson>
+												<name></name>
+											</assignedPerson>
+											<representedOrganization>
+												<name></name>
+												<addr></addr>
+												<telecom></telecom>
+											</representedOrganization>
+										</assignedEntity>
+									</performer>				
+							        *****************************************************************										…
+							    </entryRelationship>
+					            ********reconciliation Performer******************************* (performer who performed the care provider reconciliation)
+								<performer typeCode="PRF">
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.5"/> (performer templateID)
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.24.3.5.1"/> (reconciliation performer templateID)
+									<assignedEntity classCode="ASSIGNED">
+										<id root="" extension=""/>
+										<addr></addr>
+										<telecom></telecom>
+										<assignedPerson>
+											<name></name>
+										</assignedPerson>
+										<representedOrganization>
+											<name></name>
+											<addr></addr>
+											<telecom></telecom>
+										</representedOrganization>
+									</assignedEntity>
+								</performer>
+								**********************************************************************
+								
+					
+					**************************************************************************************************************************************************
+							<entryRelationship typeCode="XRCPT"> (should this be reference? see reference below)
+										…
+							</entryRelationship>
+							<entryRelationship typeCode="SUBJ">
+										…
+							</entryRelationship>
+												
+					
+
+
+							<reference typeCode="XRCPT"> (records all clinical data sources from which data was reconciled)
+								…
+							</reference>
+						</act>
+
+					</entry>
+				</section>
+				
+							
+ 

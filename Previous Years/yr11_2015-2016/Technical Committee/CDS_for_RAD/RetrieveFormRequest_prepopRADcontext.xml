@@ -1,0 +1,568 @@
+<!-- Sample RFD Retrieve Form [ITI-34]
+
+	to be used for further discussions on CDS and RAD
+
+		this sample shows:
+			a) SOAP Envelope
+			b) RetrieveFormRequest with prepopData
+			c)     and with context content as per the Clinical Research Document (CRD) profile
+-->
+<!-- SOAP envelope -->
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+	<!-- SOAP Header -->
+	<s:Header>
+		<!-- Action as per the IHE RFD requirement -->
+		<a:Action s:mustUnderstand="1">urn:ihe:iti:2007:RetrieveForm</a:Action>
+		<!-- MessageID, ActivityId, ReplyTo are stack specific and not profiled -->
+		<a:MessageID>urn:uuid:bdfe2e02-4064-469b-a7bb-4f7aecbf24e5</a:MessageID>
+		<ActivityId CorrelationId="5e7e27a9-4fe0-426f-9644-85b470db7c5d" xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">00000000-0000-0000-0000-000000000000</ActivityId>
+		<a:ReplyTo>
+			<a:Address>http://www.w3.org/2005/08/addressing/anonymous</a:Address>
+		</a:ReplyTo>
+	</s:Header>
+	<!-- SOAP Body contains the data of the Retrieve Form request -->
+	<s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<!-- RetrieveFormRequest as per RFD [ITI-34] -->
+		<RetrieveFormRequest xmlns="urn:ihe:iti:rfd:2007">
+			<!-- content of prepopData element is optional -->
+			<prepopData>
+				<!-- this example shows supplying a CDA document -->
+				<ClinicalDocument xmlns="urn:hl7-org:v3">
+					<realmCode code="US"/>
+					<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+					<templateId extension="IMPL_CDAR2_LEVEL1" root="2.16.840.1.113883.10"/>
+					<templateId extension="Medical Summary" root="1.3.6.1.4.1.19376.1.5.3.1.1.2"/>
+					<templateId extension="Referral Summary" root="1.3.6.1.4.1.19376.1.5.3.1.1.3"/>
+					<templateId root="2.16.840.1.113883.10.20.1"/>
+					<templateId root="2.16.840.1.113883.3.88.11.32.1"/>
+					<id extension="20110218" root="1.3.6.1.4.1.22812.3.99913.3"/>
+					<code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SUMMARIZATION OF EPISODE NOTE"/>
+					<title>TouchWorks Clinic Medical Summary</title>
+					<effectiveTime value="20101102090335-0500"/>
+					<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+					<languageCode code="en-US"/>
+					<recordTarget>
+						<patientRole>
+							<id extension="ZZZTW24" root="1.3.6.1.4.1.22812.3.99913.3.3.2"/>
+							<addr>
+								<streetAddressLine>432 Pine Avenue</streetAddressLine>
+								<streetAddressLine>Apartment G</streetAddressLine>
+								<city>Wood Dale</city>
+								<state>IL</state>
+								<postalCode>60656</postalCode>
+								<country>US</country>
+							</addr>
+							<telecom value="tel:+1-(312)555-1133" use="HP"/>
+							<patient>
+								<name use="L">
+									<given>Test2</given>
+									<given qualifier="CL">test</given>
+									<given>A</given>
+									<family>Allscripts</family>
+								</name>
+								<administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+								<birthTime value="19810303"/>
+								<maritalStatusCode codeSystem="2.16.840.1.113883.5.2" code="W" displayName="Widowed"/>
+								<languageCommunication>
+									<templateId root="2.16.840.1.113883.3.88.11.32.2"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1"/>
+									<languageCode code="es-MX"/>
+									<preferenceInd value="true"/>
+								</languageCommunication>
+							</patient>
+							<providerOrganization>
+								<id extension="99913" root="1.3.6.1.4.1.22812.3.99913.3.3.1"/>
+								<name>TouchWorks Clinic</name>
+								<telecom value="tel:+1-(666)666-6666" use="WP"/>
+								<addr>
+									<streetAddressLine>TouchWorks Clinic</streetAddressLine>
+									<streetAddressLine>001-01</streetAddressLine>
+									<city>bangalore</city>
+									<state>IL</state>
+									<postalCode>60048</postalCode>
+									<country>US</country>
+								</addr>
+							</providerOrganization>
+						</patientRole>
+					</recordTarget>
+					<author>
+						<time value="20100406090335-0500"/>
+						<assignedAuthor>
+							<id extension="8808808355" root="2.16.840.1.113883.4.6"/>
+							<code code="SELF" codeSystem="2.16.840.1.113883.5.111" displayName="Self" codeSystemName="HL7"/>
+							<addr nullFlavor="UNK"/>
+							<telecom nullFlavor="UNK" use="WP"/>
+							<assignedPerson>
+								<name>
+									<given>Provider</given>
+									<family>Allscripts</family>
+								</name>
+							</assignedPerson>
+						</assignedAuthor>
+					</author>
+					<author>
+						<time value="20100406090335-0500"/>
+						<assignedAuthor>
+							<id extension="99913" root="1.3.6.1.4.1.22812.3.99913.3.3.3"/>
+							<addr>
+								<streetAddressLine>TouchWorks Clinic</streetAddressLine>
+								<streetAddressLine>001-01</streetAddressLine>
+								<city>bangalore</city>
+								<state>IL</state>
+								<postalCode>60048</postalCode>
+								<country>US</country>
+							</addr>
+							<telecom value="tel:+1-(666)666-6666" use="WP"/>
+							<assignedAuthoringDevice>
+								<softwareName>TouchWorks V1.0.3735.15033</softwareName>
+							</assignedAuthoringDevice>
+							<representedOrganization>
+								<id extension="99913" root="1.3.6.1.4.1.22812.3.99913.3.3.1"/>
+								<name>TouchWorks Clinic</name>
+								<telecom value="tel:+1-(666)666-6666" use="WP"/>
+								<addr>
+									<streetAddressLine>TouchWorks Clinic</streetAddressLine>
+									<streetAddressLine>001-01</streetAddressLine>
+									<city>bangalore</city>
+									<state>IL</state>
+									<postalCode>60048</postalCode>
+									<country>US</country>
+								</addr>
+							</representedOrganization>
+						</assignedAuthor>
+					</author>
+					<custodian>
+						<assignedCustodian>
+							<representedCustodianOrganization>
+								<id extension="99913" root="1.3.6.1.4.1.22812.3.99913.3.3.1"/>
+								<name>TouchWorks Clinic</name>
+								<telecom value="tel:+1-(666)666-6666" use="WP"/>
+								<addr>
+									<streetAddressLine>TouchWorks Clinic</streetAddressLine>
+									<streetAddressLine>001-01</streetAddressLine>
+									<city>bangalore</city>
+									<state>IL</state>
+									<postalCode>60048</postalCode>
+									<country>US</country>
+								</addr>
+							</representedCustodianOrganization>
+						</assignedCustodian>
+					</custodian>
+					<informationRecipient>
+						<intendedRecipient>
+							<id extension="99913" root="1.3.6.1.4.1.22812.3.99913.3.3.1"/>
+							<addr>
+								<streetAddressLine>TouchWorks Clinic</streetAddressLine>
+								<streetAddressLine>001-01</streetAddressLine>
+								<city>bangalore</city>
+								<state>IL</state>
+								<postalCode>60048</postalCode>
+								<country>US</country>
+							</addr>
+							<telecom value="tel:+1-(666)666-6666" use="WP"/>
+							<receivedOrganization>
+								<name>TouchWorks Clinic</name>
+							</receivedOrganization>
+						</intendedRecipient>
+					</informationRecipient>
+					<authenticator>
+						<time value="20100406090335-0500"/>
+						<signatureCode code="S"/>
+						<assignedEntity>
+							<id extension="16" root="1.3.6.1.4.1.22812.3.99913.3.3.2"/>
+							<addr nullFlavor="UNK"/>
+							<telecom nullFlavor="UNK" use="WP"/>
+							<assignedPerson>
+								<name>
+									<given>Provider</given>
+									<family>Allscripts</family>
+								</name>
+							</assignedPerson>
+						</assignedEntity>
+					</authenticator>
+					<participant typeCode="IND">
+						<templateId root="2.16.840.1.113883.3.88.11.32.3"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+						<time>
+							<low/>
+						</time>
+						<associatedEntity classCode="ECON">
+							<id root="1.3.6.1.4.1.22812.3.99913.3.3.2.1"/>
+							<code nullFlavor="UNK"/>
+							<addr nullFlavor="UNK"/>
+							<telecom value="tel:+1-(312)555-1124" use="HP"/>
+							<telecom value="tel:+1-(773)555-1224" use="WP"/>
+							<associatedPerson>
+								<name>Theodore Roosevelt</name>
+							</associatedPerson>
+						</associatedEntity>
+					</participant>
+					<participant typeCode="IND">
+						<templateId root="2.16.840.1.113883.3.88.11.32.3"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+						<time>
+							<low/>
+						</time>
+						<associatedEntity classCode="PRS">
+							<id root="1.3.6.1.4.1.22812.3.99913.3.3.2.2"/>
+							<code nullFlavor="UNK"/>
+							<addr nullFlavor="UNK"/>
+							<telecom value="tel:+1-(847)555-9924" use="HP"/>
+							<telecom value="tel:+1-(312)555-7724" use="WP"/>
+							<associatedPerson>
+								<name>Abigail Adams</name>
+							</associatedPerson>
+						</associatedEntity>
+					</participant>
+					<participant typeCode="IND">
+						<templateId root="2.16.840.1.113883.3.88.11.32.3"/>
+						<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+						<time>
+							<low/>
+						</time>
+						<associatedEntity classCode="PRS">
+							<id root="1.3.6.1.4.1.22812.3.99913.3.3.2.3"/>
+							<code nullFlavor="UNK"/>
+							<addr>
+								<streetAddressLine>222 Merchandise Mart Plaza</streetAddressLine>
+								<streetAddressLine>Suite 2024</streetAddressLine>
+								<city>Chicago</city>
+								<state>Illinois</state>
+								<postalCode nullFlavor="UNK"/>
+								<country>US</country>
+							</addr>
+							<telecom value="tel:+1-(800)654-889" use="WP"/>
+							<associatedPerson>
+								<name>Allscripts</name>
+							</associatedPerson>
+						</associatedEntity>
+					</participant>
+					<documentationOf>
+						<serviceEvent classCode="PCPR">
+							<effectiveTime>
+								<low value="201004060903-0500"/>
+								<high value="20100406090335-0500"/>
+							</effectiveTime>
+							<performer typeCode="PRF">
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.3"/>
+								<templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+								<functionCode code="PP" codeSystem="2.16.840.1.113883.12.443"/>
+								<time>
+									<low/>
+									<high/>
+								</time>
+								<assignedEntity>
+									<id extension="8808808355" root="2.16.840.1.113883.4.6"/>
+									<code code="260000000X" codeSystem="2.16.840.1.113883.6.101" codeSystemName="ProviderCodes" displayName="Ambulatory Health Care Facilities"/>
+									<addr nullFlavor="UNK"/>
+									<telecom nullFlavor="UNK" use="WP"/>
+									<assignedPerson>
+										<name>
+											<given>Provider</given>
+											<family>Allscripts</family>
+										</name>
+									</assignedPerson>
+								</assignedEntity>
+							</performer>
+							<performer typeCode="PPRF">
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.3"/>
+								<assignedEntity classCode="ASSIGNED">
+									<id extension="3958898" root="1.3.6.1.4.1.22812.3.99913.3.3.6"/>
+									<code code="PHARMACY" codeSystem="1.3.5.1.4.1.19376.1.5.3.3" codeSystemName="IHERoleCode"/>
+									<assignedPerson>
+										<name>WALT FARNEPH x58574</name>
+									</assignedPerson>
+									<representedOrganization>
+										<name>CVS PROCARE PHARMACY</name>
+										<telecom value="tel:+1-(800)238-7828" use="WP"/>
+										<addr>
+											<streetAddressLine>600 PENN CENTER BLVD</streetAddressLine>
+											<city>PITTSBURGH</city>
+											<state>PA</state>
+											<postalCode>15235</postalCode>
+											<country>US</country>
+										</addr>
+									</representedOrganization>
+								</assignedEntity>
+							</performer>
+						</serviceEvent>
+					</documentationOf>
+					<componentOf>
+						<encompassingEncounter>
+							<id extension="6184" root="1.3.6.1.4.1.22812.3.99913.3.3.4"/>
+							<effectiveTime>
+								<low value="201004060903-0500"/>
+								<high value="20100406090335-0500"/>
+							</effectiveTime>
+						</encompassingEncounter>
+					</componentOf>
+					<component>
+						<structuredBody>
+							<templateId extension="IMPL_CDAR2_LEVEL1" root="2.16.840.1.113883.10"/>
+							<component>
+								<section>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.1"/>
+									<code code="42349-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Reason for Referral"/>
+									<title>Reason for Referral</title>
+									<text>No Reason for Referral was given.</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.4"/>
+									<code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HPI"/>
+									<title>History of Present Illness</title>
+									<text>No HPI available.</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<templateId root="2.16.840.1.113883.10.20.1.11"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+									<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem list"/>
+									<title>Problems</title>
+									<text>
+										<list>
+											<item>
+												<content ID="pr10037000000">Normal Routine History And Physical Adult</content> (V70.0) <content ID="pr10037000000-sta">Active</content>
+											</item>
+										</list>
+									</text>
+									<entry typeCode="DRIV">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.27"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+											<templateId root="2.16.840.1.113883.3.88.11.32.7"/>
+											<id extension="10037000000" root="1.3.6.1.4.1.22812.3.99913.3.4.1"/>
+											<id extension="11204000017" root="1.3.6.1.4.1.22812.3.99913.3.4.1.3"/>
+											<code nullFlavor="NA"/>
+											<statusCode code="active"/>
+											<effectiveTime>
+												<low nullFlavor="UNK"/>
+											</effectiveTime>
+											<entryRelationship typeCode="SUBJ" inversionInd="false">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.1.28"/>
+													<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+													<id extension="10037000000" root="1.3.6.1.4.1.22812.3.99913.3.4.1.2.1"/>
+													<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" code="282291009"/>
+													<text>
+														<reference value="#pr10037000000"/>
+													</text>
+													<statusCode code="completed"/>
+													<effectiveTime>
+														<low nullFlavor="UNK"/>
+													</effectiveTime>
+													<value xsi:type="CD" code="V70.0" displayName="Normal Routine History And Physical Adult" codeSystem="2.16.840.1.113883.6.103"/>
+													<value xsi:type="CD" code="34848" displayName="Normal Routine History And Physical Adult" codeSystem="2.16.840.1.113883.6.26"/>
+													<entryRelationship typeCode="REFR" inversionInd="false">
+														<observation classCode="OBS" moodCode="EVN">
+															<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1.1"/>
+															<templateId root="2.16.840.1.113883.10.20.1.57"/>
+															<templateId root="2.16.840.1.113883.10.20.1.50"/>
+															<code code="33999-4" displayName="Status" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+															<text>
+																<reference value="#pr10037000000-sta"/>
+															</text>
+															<statusCode code="completed"/>
+															<value xsi:type="CE" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" code="55561003"/>
+														</observation>
+													</entryRelationship>
+												</observation>
+											</entryRelationship>
+										</act>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<templateId root="2.16.840.1.113883.10.20.1.2"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+									<code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+									<title>Allergies and Adverse Reactions</title>
+									<text>
+										<list>
+											<item>
+												<content ID="al11871100003">Amoxicillin TABS</content>; <content ID="al11871100003-sta">Active</content>
+											</item>
+										</list>
+									</text>
+									<entry>
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="2.16.840.1.113883.10.20.1.27"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+											<templateId root="2.16.840.1.113883.3.88.11.32.6"/>
+											<id extension="11871100003" root="1.3.6.1.4.1.22812.3.99913.3.4.4"/>
+											<id extension="11871100005" root="1.3.6.1.4.1.22812.3.99913.3.4.4.3"/>
+											<code nullFlavor="NA"/>
+											<statusCode code="completed"/>
+											<effectiveTime>
+												<low/>
+											</effectiveTime>
+											<entryRelationship typeCode="SUBJ" inversionInd="false">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.1.28"/>
+													<templateId root="2.16.840.1.113883.10.20.1.18"/>
+													<templateId extension="allergy" root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+													<templateId extension="allergy" root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+													<id extension="11871100003" root="1.3.6.1.4.1.22812.3.99913.3.4.4.2.1"/>
+													<code codeSystem="2.16.840.1.113883.6.96" displayName="Adverse reaction to substance" code="416098002"/>
+													<statusCode code="completed"/>
+													<effectiveTime>
+														<low nullFlavor="UNK"/>
+													</effectiveTime>
+													<value xsi:type="CD" codeSystem="2.16.840.1.113883.6.96" displayName="Adverse reaction to substance" code="416098002"/>
+													<participant typeCode="CSM">
+														<participantRole classCode="MANU">
+															<playingEntity classCode="MMAT">
+																<code code="308194" codeSystem="2.16.840.1.113883.6.88" displayName="Amoxicillin TABS" codeSystemName="RXNorm">
+																	<originalText>
+																		<reference value="#al11871100003"/>
+																	</originalText>
+																</code>
+																<name>Amoxicillin TABS</name>
+															</playingEntity>
+														</participantRole>
+													</participant>
+													<entryRelationship typeCode="REFR" inversionInd="false">
+														<observation classCode="OBS" moodCode="EVN">
+															<templateId root="2.16.840.1.113883.10.20.1.39"/>
+															<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+															<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.1.1"/>
+															<templateId root="2.16.840.1.113883.10.20.1.57"/>
+															<templateId root="2.16.840.1.113883.10.20.1.50"/>
+															<templateId root="2.16.840.1.113883.10.20.1.28"/>
+															<id extension="11871100003" root="1.3.6.1.4.1.22812.3.99913.3.4.4.2.2"/>
+															<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+															<text>
+																<reference value="#al11871100003-sta"/>
+															</text>
+															<statusCode code="completed"/>
+															<effectiveTime>
+																<low nullFlavor="UNK"/>
+															</effectiveTime>
+															<value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
+														</observation>
+													</entryRelationship>
+												</observation>
+											</entryRelationship>
+										</act>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<templateId root="2.16.840.1.113883.10.20.1.8"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+									<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of medication use"/>
+									<title>Medication</title>
+									<text>
+										<content ID="noMeds">No Active Medications</content>
+									</text>
+									<entry typeCode="DRIV">
+										<substanceAdministration classCode="SBADM" moodCode="INT">
+											<templateId root="2.16.840.1.113883.10.20.1.24"/>
+											<templateId extension="medication" root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+											<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+											<templateId root="2.16.840.1.113883.3.88.11.32.8"/>
+											<id root="1.3.6.1.4.1.22812.3.42.3.4.2"/>
+											<text mediaType="text/xml"/>
+											<statusCode code="completed"/>
+											<effectiveTime/>
+											<consumable typeCode="CSM">
+												<manufacturedProduct classCode="MANU">
+													<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+													<templateId root="2.16.840.1.113883.10.20.1.53"/>
+													<manufacturedMaterial>
+														<code code="182849000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="No Drug Therapy Prescribed">
+															<originalText>
+																<reference value="#noMeds"/>
+															</originalText>
+														</code>
+														<name/>
+													</manufacturedMaterial>
+												</manufacturedProduct>
+											</consumable>
+											<entryRelationship typeCode="REFR">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.1.57"/>
+													<templateId root="2.16.840.1.113883.10.20.1.47"/>
+													<code code="33999-4" displayName="Status" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+													<statusCode code="completed"/>
+												</observation>
+											</entryRelationship>
+										</substanceAdministration>
+									</entry>
+								</section>
+							</component>
+							<component>
+								<section>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.31"/>
+									<templateId root="2.16.840.1.113883.10.20.1.10"/>
+									<code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="TREATMENT PLAN"/>
+									<title>Treatment Plan</title>
+									<text>
+										<list>
+											<item>Hemoglobin A1C Q 1 week </item>
+											<item>LMP Q 1 week </item>
+											<item>Theophyllinein5/Dextrose(Injection/Flexible/Plastic/Container(Theophyllinein5DextroseInjectionFlexiblePlasticContainer) Q 1 week </item>
+											<item>urine test2 Q 1 week </item>
+											<item>Depo-Estradiol 5 MG/ML Intramuscular Oil Q 1 week </item>
+											<item>Theophylline CR 450 MG Oral Tablet Extended Release 12 Hour Q 1 week </item>
+											<item>Amoxicillin 400 MG/5ML Oral Suspension Reconstituted Q 22 weeks </item>
+											<item>Cardec 1-3.5 MG/ML Oral Liquid Q 33 weeks </item>
+										</list>
+									</text>
+								</section>
+							</component>
+							<component>
+								<section>
+									<templateId root="2.16.840.1.113883.10.20.1.1"/>
+									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.34"/>
+									<code code="42348-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Advance Directives"/>
+									<title>Advance Directives</title>
+									<text>No Advance Directives available.</text>
+								</section>
+							</component>
+						</structuredBody>
+					</component>
+				</ClinicalDocument>
+			</prepopData>
+			<!-- workFlowData element contains two child elements where a value is mandatory -->
+			<workflowData>
+				<!-- a formID Must be requested; in this example the formID of 12346 is requested
+					FURTHER PROFILING needed
+				-->
+				<formID>12346</formID>
+				<!-- the Form Filler Must specify whether or not the response is encoded; this request is for encoded (aka a structured) response -->
+				<encodedResponse>true</encodedResponse>
+				<!-- the context element is a placeholder for further definition and profiling by content profiles -->
+				<context>
+					<!-- this example shows context as profiled by IHE Clinical Research Document (CRD) 
+						It should be easy to construct profiling for RAD CDS Context
+					-->
+					<StudyID>a String identifying the Protocol/Study Identifier</StudyID>
+					<SiteID>a String identifying the Site Identifier</SiteID>
+					<SubjID>a String identifying the Subject Identifier</SubjID>
+					<USubjID>a String identifying the Unique Subject Identifier</USubjID>
+					<InvID>a String identifying the Investigator Identifier</InvID>
+					<SpID>a String identifying the Sponsor-Defined Identifier</SpID>
+					<Visit>a String identifying the Visit Name</Visit>
+					<VisitNum>a String identifying the Visit Number</VisitNum>
+					<VisDatTim>
+						<effectiveTime xsi:type="TS">
+							<low value="20120715"/>
+							<high value="20120717"/>
+						</effectiveTime>
+					</VisDatTim>
+				</context>
+				<!-- a Form Filler may know about a specific instanceID of a form that is being requested 
+						FURTHER PROFILING - this could be the SessionID
+				-->
+				<instanceID xsi:nil="true"/>
+			</workflowData>
+		</RetrieveFormRequest>
+	</s:Body>
+</s:Envelope>

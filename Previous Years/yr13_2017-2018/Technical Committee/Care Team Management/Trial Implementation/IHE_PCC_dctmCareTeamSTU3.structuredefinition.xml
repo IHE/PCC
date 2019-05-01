@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-07-18T18:29:22.399-04:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="pc" />
+  </extension>
+  <url value="StructureDefinition/DynamicCareTeamManagement" />
+  <name value="IHE_PCC_DynamicCareTeam" />
+  <title value="IHE_PCC_DynamicCareTeamManagement" />
+  <status value="draft" />
+  <experimental value="false" />
+  <date value="2017-07-18T13:46:45.2432671-04:00" />
+  <publisher value="IHE Patient Care Coordination" />
+  <contact>
+    <name value="pcctech@googlegroups.com" />
+  </contact>
+  <purpose value="This profile depicts how information about multiple care teams can be shared and used to coordinate care. " />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="CareTeam" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CareTeam" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="CareTeam.identifier">
+      <path value="CareTeam.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="value" />
+        </discriminator>
+        <ordered value="true" />
+        <rules value="open" />
+      </slicing>
+      <comment value="This version of the profile requires at least one identifier. " />
+      <min value="1" />
+    </element>
+    <element id="CareTeam.identifier:IHE_PCC_DCTM_Identifier">
+      <path value="CareTeam.identifier" />
+      <sliceName value="IHE_PCC_DCTM_Identifier" />
+      <comment value="Ability to  tag the care team as an IHE PCC dynamic careTeam profiled resource" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="IHE_PCC_DCTM_ID" />
+      </type>
+    </element>
+    <element id="CareTeam.identifier:IHE_PCC_DCTM_Identifier.value">
+      <path value="CareTeam.identifier.value" />
+      <min value="1" />
+      <fixedString value="IHEPCCDynamicCare Team" />
+    </element>
+    <element id="CareTeam.status">
+      <path value="CareTeam.status" />
+      <min value="1" />
+    </element>
+    <element id="CareTeam.name">
+      <path value="CareTeam.name" />
+      <short value="Name of the team, such as home health care team" />
+      <definition value="A label for human use intended to distinguish like teams.  " />
+      <min value="1" />
+    </element>
+    <element id="CareTeam.subject">
+      <path value="CareTeam.subject" />
+      <requirements value="For this version of the profile, the use of group is not supported." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+    </element>
+    <element id="CareTeam.context">
+      <path value="CareTeam.context" />
+      <meaningWhenMissing value="This profile allows for CareTeam creation outside of the context of an encounter or episode." />
+    </element>
+    <element id="CareTeam.period">
+      <path value="CareTeam.period" />
+      <requirements value="Allows tracking what team(s) are in effect at a particular time. This version of the profile requires period for the CareTeam." />
+      <min value="1" />
+    </element>
+    <element id="CareTeam.period.start">
+      <path value="CareTeam.period.start" />
+      <requirements value="This version of the profile requires at least a start time for the CareTeam." />
+      <min value="1" />
+    </element>
+    <element id="CareTeam.participant">
+      <path value="CareTeam.participant" />
+      <meaningWhenMissing value="It is possible for a care team to be set up with roles specified only, before actual participants are invited into or identified as team members" />
+    </element>
+    <element id="CareTeam.participant.member">
+      <path value="CareTeam.participant.member" />
+      <comment value="Patient only needs to be listed if they have a role other than &quot;subject of care&quot;." />
+      <requirements value="Need to know who the member is if participant is required.&#xD;&#xA;&#xD;&#xA;This version of the profile requires that a DynamicCareTeam be referenced when the member is a care team.&#xD;&#xA;" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <profile value="IHE_PCC_DynamicCareTeam" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CareTeam" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

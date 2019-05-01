@@ -1,0 +1,63 @@
+<List xmlns="http://hl7.org/fhir">
+	<id value="reconciled-med-list"/>
+	<meta>
+		<lastUpdated value='2015-04-28T21:42:00-04:00'/>
+		<profile value='urn:ihe:pcc:recon:2015'/>
+	</meta>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<!-- this reconciled list of medications has 3 medications in the list; note also the text on when the list was reconciled and by whom. -->
+			  <table>
+				<thead>
+				  <tr>
+					<th>Name</th>
+					<th>Dates</th>
+					<th>Details</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr ID="ID0ECIACA">
+					<td>Cephalexin 500 MG Oral Tablet; 1 TABLET FOUR TIMES DAILY FOR 10 DAYS</td>
+					<td> Started 20-Sep-2012</td>
+					<td>Generic substitution allowed</td>
+				  </tr>
+				  <tr ID="ID0EBIACA">
+					<td>Fluoxetine 40 MG Oral Capsule; 1 TABLET once daily As Directed</td>
+					<td>Started 20-Nov-2011</td>
+					<td/>
+				  </tr>
+				  <tr ID="ID0EAIACA">
+					<td>Levothyroxine Sodium 0.05 MG Oral Tablet; 1 TABLET once daily As Directed</td>
+					<td>Started 15-Apr-2010</td>
+					<td/>
+				  </tr>
+				</tbody>
+			  </table>
+			  <paragraph ID="KT0ECIACA">The medication list was reconciled on 4/28/2014 by Dr Who</paragraph>
+			
+		</div>
+	</text>
+	<subject>
+		<reference value='Patient/f0001'/>
+	</subject>
+	<source>
+		<reference value="Practitioner/f007"/>
+		<display value="Patrick Pump"/>
+	</source>
+	<status value="current"/>
+	<date value="2015-04-28T21:42:00-04:00"/>
+	<mode value="working"/>
+	<!--    
+      in a real medications list, we'd actually have medication resources.
+      but in this example we just use entry placeholders, one for each medication -->
+	<entry>
+		<!-- medication # 1 -->
+	</entry>
+	<entry>
+		<!-- medication # 2 -->
+	</entry>
+	<entry>
+		<!-- medication # 3 -->
+	</entry>
+</List>
