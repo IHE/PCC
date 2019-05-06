@@ -4,3 +4,6 @@
 [submodule "ACDC"]
 	path = Work Items/ACDC
 	url = https://github.com/IHE/ACDC
+[submodule "Work Items/ACDC"]
+	path = Work Items/ACDC
+	url = https://github.com/IHE/ACDC
