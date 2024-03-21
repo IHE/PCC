@@ -1,0 +1,1 @@
+Each board report content, both working and final are to be stored in a folder for the year for the sake of easy organization. Instructions to generate the IHE Connectathon Results are in this root folder.
